@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Employee Management System</title>
+
+
+
+
+</head>
+<body>
+
+<div align="center">
+    <a th:href = "@{/showNewEmployeeForm}">Add Employee</a>
+    <h1>Employees List</h1>
+    <table border="1">
+        <thead>
+        <tr>
+            <th>Employee FirstName</th>
+            <th>Employee LastName</th>
+            <th>Employee mails</th>
+            <th>Employee lines</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th: each="employee : ${listEmployees}">
+            <td th:text="${employee.firstName}"></td>
+            <td th:text="${employee.lastName}"></td>
+            <td th:text="${employee.email}"></td>
+            <td th:text="${employee.phoneNumber}"></td>
+
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+</body>
+</html>
