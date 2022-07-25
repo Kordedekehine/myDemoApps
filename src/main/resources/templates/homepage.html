@@ -11,8 +11,8 @@
 <body>
 
 <div align="center">
-    <a th:href = "@{/showNewEmployeeForm}">Add Employee</a>
     <h1>Employees List</h1>
+    <a th:href = "@{/showNewEmployeeForm}">Add Employee</a>
     <table border="1">
         <thead>
         <tr>
@@ -20,6 +20,7 @@
             <th>Employee LastName</th>
             <th>Employee mails</th>
             <th>Employee lines</th>
+            <th>Actions</th>
         </tr>
         </thead>
         <tbody>
@@ -28,7 +29,8 @@
             <td th:text="${employee.lastName}"></td>
             <td th:text="${employee.email}"></td>
             <td th:text="${employee.phoneNumber}"></td>
-
+            <td> <a th:href="@{/showFormUpdate/{id}(id=${employee.id})}" class="btn btn-primary"></a>Update</td>
+            <td> <a th:href="@{/deleteEmployee/{id}(id=${employee.id})}" class="btn btn-danger"></a>Delete</td>
         </tr>
         </tbody>
     </table>
